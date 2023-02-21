@@ -2,8 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 
-# URL of the Tesla revenue data
-url = 'https://www.macrotrends.net/stocks/charts/TSLA/tesla/revenue'
+# URL of the GameStop revenue data
+url = 'https://www.macrotrends.net/stocks/charts/GME/gamestop/revenue'
 
 # Send a GET request to the website and get the HTML content
 html_content = requests.get(url).text
@@ -22,7 +22,7 @@ for row in rows:
 
 # Convert the data to a pandas dataframe
 headers = data.pop(0)
-tesla_revenue = pd.DataFrame(data, columns=headers)
+gme_revenue = pd.DataFrame(data, columns=headers)
 
 # Display the last five rows of the dataframe
-print(tesla_revenue.tail())
+print(gme_revenue.tail())
